@@ -1,0 +1,21 @@
+vize_notu=int(input("Vize notunuzu giriniz : "))
+final_notu=int(input("Final notunuzu giriniz : "))
+ortalama=(final_notu*0.6)+(vize_notu*0.4)
+if(final_notu<50):
+    print("FF")
+elif(ortalama>=85):
+    print("AA")
+elif(ortalama<85 and ortalama>=75):
+    print("BA")
+elif(ortalama<75 and ortalama>=70):
+    print("BB")
+elif(ortalama<70 and ortalama>=65):
+    print("CB")
+elif(ortalama<65 and ortalama>=60):
+    print("CC")
+elif(ortalama<60 and ortalama>=55):
+    print("DC")
+elif(ortalama<55 and ortalama>=50):
+    print("DD")
+else:
+    print("FF")
