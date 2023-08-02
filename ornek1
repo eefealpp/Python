@@ -1,22 +1,23 @@
 vize_notu=float(input("Vize notunuzu giriniz : "))
 final_notu=float(input("Final notunuzu giriniz : "))
 ortalama=(final_notu*0.6)+(vize_notu*0.4)
+metin="Harf notunuz : "
 print("Ortalamanız : ",ortalama)
 if(final_notu<50):
-    print("FF")
+    print(metin,"FF")
 elif(ortalama>=85):
-    print("AA")
+    print(metin,"AA")
 elif(ortalama<85 and ortalama>=75):
-    print("BA")
+    print(metin,"BA")
 elif(ortalama<75 and ortalama>=70):
-    print("BB")
+    print(metin,"BB")
 elif(ortalama<70 and ortalama>=65):
-    print("CB")
+    print(metin,"CB")
 elif(ortalama<65 and ortalama>=60):
-    print("CC")
+    print(metin,"CC")
 elif(ortalama<60 and ortalama>=55):
-    print("DC")
+    print(metin,"DC")
 elif(ortalama<55 and ortalama>=50):
-    print("DD")
+    print(metin,"DD")
 else:
-    print("FF")
+    print(metin,"FF")
