@@ -1,6 +1,7 @@
 vize_notu=float(input("Vize notunuzu giriniz : "))
 final_notu=float(input("Final notunuzu giriniz : "))
 ortalama=(final_notu*0.6)+(vize_notu*0.4)
+print("Ortalamanız : ",ortalama)
 if(final_notu<50):
     print("FF")
 elif(ortalama>=85):
