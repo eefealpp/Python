@@ -52,5 +52,4 @@ while(True):
         toplam -= liste[sayac1]
         sayac1+=1
         sayac2=0
-print("Döngü bitti")
 print(sayac1,sayac2)
