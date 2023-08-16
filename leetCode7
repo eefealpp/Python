@@ -1,0 +1,67 @@
+"""
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type.
+
+
+Example 1:
+
+Input: s = "()"
+Output: true
+Example 2:
+
+Input: s = "()[]{}"
+Output: true
+Example 3:
+
+Input: s = "(]"
+Output: false
+
+
+Constraints:
+
+1 <= s.length <= 104
+s consists of parentheses only '()[]{}'.
+"""
+class Solution:
+    def isValid(self,s):
+        result=True
+        l_strs = list(s)
+        indis = len(s)
+        liste = []
+        for i in range(indis):
+            if (l_strs[i] == "(" or l_strs[i] == "[" or l_strs[i] == "{"):
+                liste.append(l_strs[i])
+            if (l_strs[i] == ")"):
+                if (len(liste) == 0):
+                    result = False
+                elif (liste[-1] == "("):
+                    liste.pop()
+                else:
+                    result = False
+                    break
+            elif (l_strs[i] == "}"):
+                if (len(liste) == 0):
+                    result = False
+                elif (liste[-1] == "{"):
+                    liste.pop()
+                else:
+                    result = False
+                    break
+            elif (l_strs[i] == "]"):
+                if (len(liste) == 0):
+                    result = False
+                elif (liste[-1] == "["):
+                    liste.pop()
+                else:
+                    result = False
+                    break
+        if (len(liste) != 0):
+            result = False
+        return result
+deneme=Solution()
+print(deneme.isValid("(]"))
