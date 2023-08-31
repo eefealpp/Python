@@ -38,4 +38,4 @@ class Solution(object):
             return 1
         return self.climbStairs(n - 1) + self.climbStairs(n - 2)
         *İçime sinen çözüm bu ama sürekli 'Time Limit Exceeded' 
-         hatası verdiği için bunu kullandım."""
+         hatası verdiği için farklı bir çözüm uydurdum."""
