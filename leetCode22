@@ -1,0 +1,68 @@
+"""
+You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+ 
+
+Example 1:
+
+
+Input: l1 = [2,4,3], l2 = [5,6,4]
+Output: [7,0,8]
+Explanation: 342 + 465 = 807.
+Example 2:
+
+Input: l1 = [0], l2 = [0]
+Output: [0]
+Example 3:
+
+Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+Output: [8,9,9,9,0,0,0,1]
+ 
+
+Constraints:
+
+The number of nodes in each linked list is in the range [1, 100].
+0 <= Node.val <= 9
+It is guaranteed that the list represents a number that does not have leading zeros.
+"""
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        bas1=l1
+        bas2=l2
+        liste1=[]
+        liste2=[]
+        while bas1 is not None:
+            liste1.append(bas1.val)
+            bas1=bas1.next
+        while bas2 is not None:
+            liste2.append(bas2.val)
+            bas2=bas2.next
+        liste1.reverse()
+        liste2.reverse()
+        toplam=0
+        basamak1=len(liste1)-1
+        basamak2=len(liste2)-1
+        for i in range(len(liste1)):
+            toplam+=liste1[i]*(10**basamak1)
+            basamak1-=1
+        for i in range(len(liste2)):
+            toplam+=liste2[i]*(10**basamak2)
+            basamak2-=1
+        liste3=[]
+        for i in range(len(str(toplam))):
+            liste3.append(int(toplam % 10))
+            toplam /= 10
+        l3=ListNode()
+        bas3=l3
+        for i in range(len(liste3)):
+            bas3.val = liste3[i]
+            if i < len(liste3) - 1:
+                bas3.next = ListNode()
+                bas3 = bas3.next
+        return l3
